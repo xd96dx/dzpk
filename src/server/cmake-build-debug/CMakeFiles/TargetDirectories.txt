@@ -1,0 +1,9 @@
+/home/xingdi/workspace/dzpk/dzpk/src/server/cmake-build-debug/CMakeFiles/dzpk.dir
+/home/xingdi/workspace/dzpk/dzpk/src/server/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/xingdi/workspace/dzpk/dzpk/src/server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/xingdi/workspace/dzpk/dzpk/src/server/cmake-build-debug/service/CMakeFiles/edit_cache.dir
+/home/xingdi/workspace/dzpk/dzpk/src/server/cmake-build-debug/service/CMakeFiles/rebuild_cache.dir
+/home/xingdi/workspace/dzpk/dzpk/src/server/cmake-build-debug/service/protoFile/CMakeFiles/edit_cache.dir
+/home/xingdi/workspace/dzpk/dzpk/src/server/cmake-build-debug/service/protoFile/CMakeFiles/rebuild_cache.dir
+/home/xingdi/workspace/dzpk/dzpk/src/server/cmake-build-debug/app/CMakeFiles/edit_cache.dir
+/home/xingdi/workspace/dzpk/dzpk/src/server/cmake-build-debug/app/CMakeFiles/rebuild_cache.dir

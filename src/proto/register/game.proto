@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+// 服务端给客户端发牌, 客户端作为server接受消息
+service Poker {
+  rpc Licensing(PokerRequest) returns (PokerResp) {} // 发牌
+}
+
+message PokerRequest {
+  string suit = 1;   // 卡牌花色 Spade(黑桃) Heart(红桃) Diamond(方块) Club(梅花)
+  int32  point = 2;  // 卡牌点数 1~14: A 2 3 4 5 6 7 8 9 10 J Q K A
+}
+
+message PokerResp {
+  int32 status = 1; // 0 success, other fail
+}

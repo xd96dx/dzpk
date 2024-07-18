@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+service Register {
+  rpc UserReg (UserMsg) returns (UserRsp) {} // 用户注册
+  rpc HeartBeat (HeartBeatMsg) returns (HeartBeatRsp) {} //节点间心跳, 查询用户在线状态
+
+  rpc joinRoom (JoinRoom) returns (JoinRoomResp) {} // 加入房间
+}
+
+message HeartBeatMsg {
+  string name = 1;
+}
+
+message HeartBeatRsp {
+  int32 status = 1;
+}
+
+message UserMsg {
+  string name = 1;
+  string pwd  = 2;
+}
+
+message UserRsp {
+  int32 status = 1;
+}
+
+message JoinRoom {
+  int32 roomID = 1; // 房间ID
+  string name  = 2; // 用户名称
+}
+
+message Player {
+  int32 pos = 1;   // 其他玩家的座次, 首次进入房间传-1, 换位置时传入相应位置
+  string name = 2; // 名称
+}
+
+message JoinRoomResp {
+  int32 pos = 1;              // 玩家的座次
+  repeated Player others = 2; // 所有玩家
+}
