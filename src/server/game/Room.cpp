@@ -61,3 +61,17 @@ void Room::licensingPublic(int num) {
         pokerCard.getPokerHeap().pop_back();
     }
 }
+
+void Room::mergePublic() {
+    for (auto & iter : *this->players) {
+        auto player = iter.second;
+        if (player.getIsOut() || player.getName().empty())
+            continue;
+
+        int index = player.getId();
+        (*finalCard)[index] = player.getHandCard();
+        (*finalCard)[index].getPokerHeap().insert((*finalCard)[index].getPokerHeap().end(),
+                                                  publicPoker.getPokerHeap().begin(),
+                                                  publicPoker.getPokerHeap().end());
+    }
+}

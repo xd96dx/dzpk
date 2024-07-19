@@ -61,9 +61,9 @@ extern JoinRoomDefaultTypeInternal _JoinRoom_default_instance_;
 class JoinRoomResp;
 struct JoinRoomRespDefaultTypeInternal;
 extern JoinRoomRespDefaultTypeInternal _JoinRoomResp_default_instance_;
-class Player;
-struct PlayerDefaultTypeInternal;
-extern PlayerDefaultTypeInternal _Player_default_instance_;
+class RoomPlayer;
+struct RoomPlayerDefaultTypeInternal;
+extern RoomPlayerDefaultTypeInternal _RoomPlayer_default_instance_;
 class UserMsg;
 struct UserMsgDefaultTypeInternal;
 extern UserMsgDefaultTypeInternal _UserMsg_default_instance_;
@@ -439,23 +439,23 @@ class UserMsg final : public ::google::protobuf::Message
 };
 // -------------------------------------------------------------------
 
-class Player final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:Player) */ {
+class RoomPlayer final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:RoomPlayer) */ {
  public:
-  inline Player() : Player(nullptr) {}
-  ~Player() override;
+  inline RoomPlayer() : RoomPlayer(nullptr) {}
+  ~RoomPlayer() override;
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR Player(
+  explicit PROTOBUF_CONSTEXPR RoomPlayer(
       ::google::protobuf::internal::ConstantInitialized);
 
-  inline Player(const Player& from) : Player(nullptr, from) {}
-  inline Player(Player&& from) noexcept
-      : Player(nullptr, std::move(from)) {}
-  inline Player& operator=(const Player& from) {
+  inline RoomPlayer(const RoomPlayer& from) : RoomPlayer(nullptr, from) {}
+  inline RoomPlayer(RoomPlayer&& from) noexcept
+      : RoomPlayer(nullptr, std::move(from)) {}
+  inline RoomPlayer& operator=(const RoomPlayer& from) {
     CopyFrom(from);
     return *this;
   }
-  inline Player& operator=(Player&& from) noexcept {
+  inline RoomPlayer& operator=(RoomPlayer&& from) noexcept {
     if (this == &from) return *this;
     if (GetArena() == from.GetArena()
 #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -487,16 +487,16 @@ class Player final : public ::google::protobuf::Message
   static const ::google::protobuf::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const Player& default_instance() {
+  static const RoomPlayer& default_instance() {
     return *internal_default_instance();
   }
-  static inline const Player* internal_default_instance() {
-    return reinterpret_cast<const Player*>(
-        &_Player_default_instance_);
+  static inline const RoomPlayer* internal_default_instance() {
+    return reinterpret_cast<const RoomPlayer*>(
+        &_RoomPlayer_default_instance_);
   }
   static constexpr int kIndexInFileMessages = 5;
-  friend void swap(Player& a, Player& b) { a.Swap(&b); }
-  inline void Swap(Player* other) {
+  friend void swap(RoomPlayer& a, RoomPlayer& b) { a.Swap(&b); }
+  inline void Swap(RoomPlayer* other) {
     if (other == this) return;
 #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetArena() != nullptr && GetArena() == other->GetArena()) {
@@ -508,7 +508,7 @@ class Player final : public ::google::protobuf::Message
       ::google::protobuf::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(Player* other) {
+  void UnsafeArenaSwap(RoomPlayer* other) {
     if (other == this) return;
     ABSL_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -516,13 +516,13 @@ class Player final : public ::google::protobuf::Message
 
   // implements Message ----------------------------------------------
 
-  Player* New(::google::protobuf::Arena* arena = nullptr) const final {
-    return ::google::protobuf::Message::DefaultConstruct<Player>(arena);
+  RoomPlayer* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return ::google::protobuf::Message::DefaultConstruct<RoomPlayer>(arena);
   }
   using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const Player& from);
+  void CopyFrom(const RoomPlayer& from);
   using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const Player& from) { Player::MergeImpl(*this, from); }
+  void MergeFrom(const RoomPlayer& from) { RoomPlayer::MergeImpl(*this, from); }
 
   private:
   static void MergeImpl(
@@ -543,16 +543,16 @@ class Player final : public ::google::protobuf::Message
   private:
   void SharedCtor(::google::protobuf::Arena* arena);
   void SharedDtor();
-  void InternalSwap(Player* other);
+  void InternalSwap(RoomPlayer* other);
  private:
   friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "Player"; }
+  static ::absl::string_view FullMessageName() { return "RoomPlayer"; }
 
  protected:
-  explicit Player(::google::protobuf::Arena* arena);
-  Player(::google::protobuf::Arena* arena, const Player& from);
-  Player(::google::protobuf::Arena* arena, Player&& from) noexcept
-      : Player(arena) {
+  explicit RoomPlayer(::google::protobuf::Arena* arena);
+  RoomPlayer(::google::protobuf::Arena* arena, const RoomPlayer& from);
+  RoomPlayer(::google::protobuf::Arena* arena, RoomPlayer&& from) noexcept
+      : RoomPlayer(arena) {
     *this = ::std::move(from);
   }
   const ::google::protobuf::MessageLite::ClassData* GetClassData()
@@ -593,13 +593,13 @@ class Player final : public ::google::protobuf::Message
   void _internal_set_pos(::int32_t value);
 
   public:
-  // @@protoc_insertion_point(class_scope:Player)
+  // @@protoc_insertion_point(class_scope:RoomPlayer)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
       1, 2, 0,
-      19, 2>
+      23, 2>
       _table_;
   friend class ::google::protobuf::MessageLite;
   friend class ::google::protobuf::Arena;
@@ -1277,23 +1277,23 @@ class JoinRoomResp final : public ::google::protobuf::Message
     kOthersFieldNumber = 2,
     kPosFieldNumber = 1,
   };
-  // repeated .Player others = 2;
+  // repeated .RoomPlayer others = 2;
   int others_size() const;
   private:
   int _internal_others_size() const;
 
   public:
   void clear_others() ;
-  ::Player* mutable_others(int index);
-  ::google::protobuf::RepeatedPtrField<::Player>* mutable_others();
+  ::RoomPlayer* mutable_others(int index);
+  ::google::protobuf::RepeatedPtrField<::RoomPlayer>* mutable_others();
 
   private:
-  const ::google::protobuf::RepeatedPtrField<::Player>& _internal_others() const;
-  ::google::protobuf::RepeatedPtrField<::Player>* _internal_mutable_others();
+  const ::google::protobuf::RepeatedPtrField<::RoomPlayer>& _internal_others() const;
+  ::google::protobuf::RepeatedPtrField<::RoomPlayer>* _internal_mutable_others();
   public:
-  const ::Player& others(int index) const;
-  ::Player* add_others();
-  const ::google::protobuf::RepeatedPtrField<::Player>& others() const;
+  const ::RoomPlayer& others(int index) const;
+  ::RoomPlayer* add_others();
+  const ::google::protobuf::RepeatedPtrField<::RoomPlayer>& others() const;
   // int32 pos = 1;
   void clear_pos() ;
   ::int32_t pos() const;
@@ -1325,7 +1325,7 @@ class JoinRoomResp final : public ::google::protobuf::Message
                           ::google::protobuf::Arena* arena);
     inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
                           ::google::protobuf::Arena* arena, const Impl_& from);
-    ::google::protobuf::RepeatedPtrField< ::Player > others_;
+    ::google::protobuf::RepeatedPtrField< ::RoomPlayer > others_;
     ::int32_t pos_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
@@ -1634,70 +1634,70 @@ inline void JoinRoom::set_allocated_name(std::string* value) {
 
 // -------------------------------------------------------------------
 
-// Player
+// RoomPlayer
 
 // int32 pos = 1;
-inline void Player::clear_pos() {
+inline void RoomPlayer::clear_pos() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.pos_ = 0;
 }
-inline ::int32_t Player::pos() const {
-  // @@protoc_insertion_point(field_get:Player.pos)
+inline ::int32_t RoomPlayer::pos() const {
+  // @@protoc_insertion_point(field_get:RoomPlayer.pos)
   return _internal_pos();
 }
-inline void Player::set_pos(::int32_t value) {
+inline void RoomPlayer::set_pos(::int32_t value) {
   _internal_set_pos(value);
-  // @@protoc_insertion_point(field_set:Player.pos)
+  // @@protoc_insertion_point(field_set:RoomPlayer.pos)
 }
-inline ::int32_t Player::_internal_pos() const {
+inline ::int32_t RoomPlayer::_internal_pos() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return _impl_.pos_;
 }
-inline void Player::_internal_set_pos(::int32_t value) {
+inline void RoomPlayer::_internal_set_pos(::int32_t value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.pos_ = value;
 }
 
 // string name = 2;
-inline void Player::clear_name() {
+inline void RoomPlayer::clear_name() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.name_.ClearToEmpty();
 }
-inline const std::string& Player::name() const
+inline const std::string& RoomPlayer::name() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:Player.name)
+  // @@protoc_insertion_point(field_get:RoomPlayer.name)
   return _internal_name();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void Player::set_name(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void RoomPlayer::set_name(Arg_&& arg,
                                                      Args_... args) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:Player.name)
+  // @@protoc_insertion_point(field_set:RoomPlayer.name)
 }
-inline std::string* Player::mutable_name() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline std::string* RoomPlayer::mutable_name() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   std::string* _s = _internal_mutable_name();
-  // @@protoc_insertion_point(field_mutable:Player.name)
+  // @@protoc_insertion_point(field_mutable:RoomPlayer.name)
   return _s;
 }
-inline const std::string& Player::_internal_name() const {
+inline const std::string& RoomPlayer::_internal_name() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return _impl_.name_.Get();
 }
-inline void Player::_internal_set_name(const std::string& value) {
+inline void RoomPlayer::_internal_set_name(const std::string& value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.name_.Set(value, GetArena());
 }
-inline std::string* Player::_internal_mutable_name() {
+inline std::string* RoomPlayer::_internal_mutable_name() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   return _impl_.name_.Mutable( GetArena());
 }
-inline std::string* Player::release_name() {
+inline std::string* RoomPlayer::release_name() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  // @@protoc_insertion_point(field_release:Player.name)
+  // @@protoc_insertion_point(field_release:RoomPlayer.name)
   return _impl_.name_.Release();
 }
-inline void Player::set_allocated_name(std::string* value) {
+inline void RoomPlayer::set_allocated_name(std::string* value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.name_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -1705,7 +1705,7 @@ inline void Player::set_allocated_name(std::string* value) {
           _impl_.name_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Player.name)
+  // @@protoc_insertion_point(field_set_allocated:RoomPlayer.name)
 }
 
 // -------------------------------------------------------------------
@@ -1734,7 +1734,7 @@ inline void JoinRoomResp::_internal_set_pos(::int32_t value) {
   _impl_.pos_ = value;
 }
 
-// repeated .Player others = 2;
+// repeated .RoomPlayer others = 2;
 inline int JoinRoomResp::_internal_others_size() const {
   return _internal_others().size();
 }
@@ -1745,39 +1745,39 @@ inline void JoinRoomResp::clear_others() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.others_.Clear();
 }
-inline ::Player* JoinRoomResp::mutable_others(int index)
+inline ::RoomPlayer* JoinRoomResp::mutable_others(int index)
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable:JoinRoomResp.others)
   return _internal_mutable_others()->Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField<::Player>* JoinRoomResp::mutable_others()
+inline ::google::protobuf::RepeatedPtrField<::RoomPlayer>* JoinRoomResp::mutable_others()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable_list:JoinRoomResp.others)
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   return _internal_mutable_others();
 }
-inline const ::Player& JoinRoomResp::others(int index) const
+inline const ::RoomPlayer& JoinRoomResp::others(int index) const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:JoinRoomResp.others)
   return _internal_others().Get(index);
 }
-inline ::Player* JoinRoomResp::add_others() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline ::RoomPlayer* JoinRoomResp::add_others() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  ::Player* _add = _internal_mutable_others()->Add();
+  ::RoomPlayer* _add = _internal_mutable_others()->Add();
   // @@protoc_insertion_point(field_add:JoinRoomResp.others)
   return _add;
 }
-inline const ::google::protobuf::RepeatedPtrField<::Player>& JoinRoomResp::others() const
+inline const ::google::protobuf::RepeatedPtrField<::RoomPlayer>& JoinRoomResp::others() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_list:JoinRoomResp.others)
   return _internal_others();
 }
-inline const ::google::protobuf::RepeatedPtrField<::Player>&
+inline const ::google::protobuf::RepeatedPtrField<::RoomPlayer>&
 JoinRoomResp::_internal_others() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return _impl_.others_;
 }
-inline ::google::protobuf::RepeatedPtrField<::Player>*
+inline ::google::protobuf::RepeatedPtrField<::RoomPlayer>*
 JoinRoomResp::_internal_mutable_others() {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return &_impl_.others_;

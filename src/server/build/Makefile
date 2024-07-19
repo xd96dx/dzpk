@@ -57,10 +57,10 @@ RM = /home/xingdi/cmake/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xingdi/workspace/dzpk/dzpk/src/server
+CMAKE_SOURCE_DIR = /home/xingdi/workspace/dzpk/dzpk/dzpk/src/server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xingdi/workspace/dzpk/dzpk/src/server/build
+CMAKE_BINARY_DIR = /home/xingdi/workspace/dzpk/dzpk/dzpk/src/server/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xingdi/workspace/dzpk/dzpk/src/server/build/CMakeFiles /home/xingdi/workspace/dzpk/dzpk/src/server/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xingdi/workspace/dzpk/dzpk/dzpk/src/server/build/CMakeFiles /home/xingdi/workspace/dzpk/dzpk/dzpk/src/server/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xingdi/workspace/dzpk/dzpk/src/server/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xingdi/workspace/dzpk/dzpk/dzpk/src/server/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -273,6 +273,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dzpk.dir/build.make CMakeFiles/dzpk.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+program.o: program.cpp.o
+.PHONY : program.o
+
+# target to build an object file
+program.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dzpk.dir/build.make CMakeFiles/dzpk.dir/program.cpp.o
+.PHONY : program.cpp.o
+
+program.i: program.cpp.i
+.PHONY : program.i
+
+# target to preprocess a source file
+program.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dzpk.dir/build.make CMakeFiles/dzpk.dir/program.cpp.i
+.PHONY : program.cpp.i
+
+program.s: program.cpp.s
+.PHONY : program.s
+
+# target to generate assembly for a file
+program.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dzpk.dir/build.make CMakeFiles/dzpk.dir/program.cpp.s
+.PHONY : program.cpp.s
+
 service/RegisterImpl.o: service/RegisterImpl.cpp.o
 .PHONY : service/RegisterImpl.o
 
@@ -296,6 +320,54 @@ service/RegisterImpl.s: service/RegisterImpl.cpp.s
 service/RegisterImpl.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dzpk.dir/build.make CMakeFiles/dzpk.dir/service/RegisterImpl.cpp.s
 .PHONY : service/RegisterImpl.cpp.s
+
+service/protoFile/game.grpc.pb.o: service/protoFile/game.grpc.pb.cc.o
+.PHONY : service/protoFile/game.grpc.pb.o
+
+# target to build an object file
+service/protoFile/game.grpc.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dzpk.dir/build.make CMakeFiles/dzpk.dir/service/protoFile/game.grpc.pb.cc.o
+.PHONY : service/protoFile/game.grpc.pb.cc.o
+
+service/protoFile/game.grpc.pb.i: service/protoFile/game.grpc.pb.cc.i
+.PHONY : service/protoFile/game.grpc.pb.i
+
+# target to preprocess a source file
+service/protoFile/game.grpc.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dzpk.dir/build.make CMakeFiles/dzpk.dir/service/protoFile/game.grpc.pb.cc.i
+.PHONY : service/protoFile/game.grpc.pb.cc.i
+
+service/protoFile/game.grpc.pb.s: service/protoFile/game.grpc.pb.cc.s
+.PHONY : service/protoFile/game.grpc.pb.s
+
+# target to generate assembly for a file
+service/protoFile/game.grpc.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dzpk.dir/build.make CMakeFiles/dzpk.dir/service/protoFile/game.grpc.pb.cc.s
+.PHONY : service/protoFile/game.grpc.pb.cc.s
+
+service/protoFile/game.pb.o: service/protoFile/game.pb.cc.o
+.PHONY : service/protoFile/game.pb.o
+
+# target to build an object file
+service/protoFile/game.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dzpk.dir/build.make CMakeFiles/dzpk.dir/service/protoFile/game.pb.cc.o
+.PHONY : service/protoFile/game.pb.cc.o
+
+service/protoFile/game.pb.i: service/protoFile/game.pb.cc.i
+.PHONY : service/protoFile/game.pb.i
+
+# target to preprocess a source file
+service/protoFile/game.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dzpk.dir/build.make CMakeFiles/dzpk.dir/service/protoFile/game.pb.cc.i
+.PHONY : service/protoFile/game.pb.cc.i
+
+service/protoFile/game.pb.s: service/protoFile/game.pb.cc.s
+.PHONY : service/protoFile/game.pb.s
+
+# target to generate assembly for a file
+service/protoFile/game.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dzpk.dir/build.make CMakeFiles/dzpk.dir/service/protoFile/game.pb.cc.s
+.PHONY : service/protoFile/game.pb.cc.s
 
 service/protoFile/register.grpc.pb.o: service/protoFile/register.grpc.pb.cc.o
 .PHONY : service/protoFile/register.grpc.pb.o
@@ -396,9 +468,18 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... program.o"
+	@echo "... program.i"
+	@echo "... program.s"
 	@echo "... service/RegisterImpl.o"
 	@echo "... service/RegisterImpl.i"
 	@echo "... service/RegisterImpl.s"
+	@echo "... service/protoFile/game.grpc.pb.o"
+	@echo "... service/protoFile/game.grpc.pb.i"
+	@echo "... service/protoFile/game.grpc.pb.s"
+	@echo "... service/protoFile/game.pb.o"
+	@echo "... service/protoFile/game.pb.i"
+	@echo "... service/protoFile/game.pb.s"
 	@echo "... service/protoFile/register.grpc.pb.o"
 	@echo "... service/protoFile/register.grpc.pb.i"
 	@echo "... service/protoFile/register.grpc.pb.s"

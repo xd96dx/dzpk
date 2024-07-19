@@ -65,7 +65,7 @@ struct UserMsgDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UserMsgDefaultTypeInternal _UserMsg_default_instance_;
 
-inline constexpr Player::Impl_::Impl_(
+inline constexpr RoomPlayer::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : name_(
             &::google::protobuf::internal::fixed_address_empty_string,
@@ -74,18 +74,18 @@ inline constexpr Player::Impl_::Impl_(
         _cached_size_{0} {}
 
 template <typename>
-PROTOBUF_CONSTEXPR Player::Player(::_pbi::ConstantInitialized)
+PROTOBUF_CONSTEXPR RoomPlayer::RoomPlayer(::_pbi::ConstantInitialized)
     : _impl_(::_pbi::ConstantInitialized()) {}
-struct PlayerDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR PlayerDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~PlayerDefaultTypeInternal() {}
+struct RoomPlayerDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR RoomPlayerDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~RoomPlayerDefaultTypeInternal() {}
   union {
-    Player _instance;
+    RoomPlayer _instance;
   };
 };
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PlayerDefaultTypeInternal _Player_default_instance_;
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RoomPlayerDefaultTypeInternal _RoomPlayer_default_instance_;
 
 inline constexpr JoinRoom::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -224,15 +224,15 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::JoinRoom, _impl_.roomid_),
         PROTOBUF_FIELD_OFFSET(::JoinRoom, _impl_.name_),
         ~0u,  // no _has_bits_
-        PROTOBUF_FIELD_OFFSET(::Player, _internal_metadata_),
+        PROTOBUF_FIELD_OFFSET(::RoomPlayer, _internal_metadata_),
         ~0u,  // no _extensions_
         ~0u,  // no _oneof_case_
         ~0u,  // no _weak_field_map_
         ~0u,  // no _inlined_string_donated_
         ~0u,  // no _split_
         ~0u,  // no sizeof(Split)
-        PROTOBUF_FIELD_OFFSET(::Player, _impl_.pos_),
-        PROTOBUF_FIELD_OFFSET(::Player, _impl_.name_),
+        PROTOBUF_FIELD_OFFSET(::RoomPlayer, _impl_.pos_),
+        PROTOBUF_FIELD_OFFSET(::RoomPlayer, _impl_.name_),
         ~0u,  // no _has_bits_
         PROTOBUF_FIELD_OFFSET(::JoinRoomResp, _internal_metadata_),
         ~0u,  // no _extensions_
@@ -252,7 +252,7 @@ static const ::_pbi::MigrationSchema
         {18, -1, -1, sizeof(::UserMsg)},
         {28, -1, -1, sizeof(::UserRsp)},
         {37, -1, -1, sizeof(::JoinRoom)},
-        {47, -1, -1, sizeof(::Player)},
+        {47, -1, -1, sizeof(::RoomPlayer)},
         {57, -1, -1, sizeof(::JoinRoomResp)},
 };
 static const ::_pb::Message* const file_default_instances[] = {
@@ -261,7 +261,7 @@ static const ::_pb::Message* const file_default_instances[] = {
     &::_UserMsg_default_instance_._instance,
     &::_UserRsp_default_instance_._instance,
     &::_JoinRoom_default_instance_._instance,
-    &::_Player_default_instance_._instance,
+    &::_RoomPlayer_default_instance_._instance,
     &::_JoinRoomResp_default_instance_._instance,
 };
 const char descriptor_table_protodef_register_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
@@ -270,19 +270,19 @@ const char descriptor_table_protodef_register_2eproto[] ABSL_ATTRIBUTE_SECTION_V
     "\030\001 \001(\t\"\036\n\014HeartBeatRsp\022\016\n\006status\030\001 \001(\005\"$"
     "\n\007UserMsg\022\014\n\004name\030\001 \001(\t\022\013\n\003pwd\030\002 \001(\t\"\031\n\007"
     "UserRsp\022\016\n\006status\030\001 \001(\005\"(\n\010JoinRoom\022\016\n\006r"
-    "oomID\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\"#\n\006Player\022\013\n\003p"
-    "os\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\"4\n\014JoinRoomResp\022\013"
-    "\n\003pos\030\001 \001(\005\022\027\n\006others\030\002 \003(\0132\007.Player2\200\001\n"
-    "\010Register\022\037\n\007UserReg\022\010.UserMsg\032\010.UserRsp"
-    "\"\000\022+\n\tHeartBeat\022\r.HeartBeatMsg\032\r.HeartBe"
-    "atRsp\"\000\022&\n\010joinRoom\022\t.JoinRoom\032\r.JoinRoo"
-    "mResp\"\000b\006proto3"
+    "oomID\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\"\'\n\nRoomPlayer\022"
+    "\013\n\003pos\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\"8\n\014JoinRoomRe"
+    "sp\022\013\n\003pos\030\001 \001(\005\022\033\n\006others\030\002 \003(\0132\013.RoomPl"
+    "ayer2\200\001\n\010Register\022\037\n\007UserReg\022\010.UserMsg\032\010"
+    ".UserRsp\"\000\022+\n\tHeartBeat\022\r.HeartBeatMsg\032\r"
+    ".HeartBeatRsp\"\000\022&\n\010joinRoom\022\t.JoinRoom\032\r"
+    ".JoinRoomResp\"\000b\006proto3"
 };
 static ::absl::once_flag descriptor_table_register_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_register_2eproto = {
     false,
     false,
-    415,
+    423,
     descriptor_table_protodef_register_2eproto,
     "register.proto",
     &descriptor_table_register_2eproto_once,
@@ -1313,71 +1313,71 @@ void JoinRoom::InternalSwap(JoinRoom* PROTOBUF_RESTRICT other) {
 }
 // ===================================================================
 
-class Player::_Internal {
+class RoomPlayer::_Internal {
  public:
 };
 
-Player::Player(::google::protobuf::Arena* arena)
+RoomPlayer::RoomPlayer(::google::protobuf::Arena* arena)
     : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:Player)
+  // @@protoc_insertion_point(arena_constructor:RoomPlayer)
 }
-inline PROTOBUF_NDEBUG_INLINE Player::Impl_::Impl_(
+inline PROTOBUF_NDEBUG_INLINE RoomPlayer::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
     const Impl_& from)
       : name_(arena, from.name_),
         _cached_size_{0} {}
 
-Player::Player(
+RoomPlayer::RoomPlayer(
     ::google::protobuf::Arena* arena,
-    const Player& from)
+    const RoomPlayer& from)
     : ::google::protobuf::Message(arena) {
-  Player* const _this = this;
+  RoomPlayer* const _this = this;
   (void)_this;
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
   _impl_.pos_ = from._impl_.pos_;
 
-  // @@protoc_insertion_point(copy_constructor:Player)
+  // @@protoc_insertion_point(copy_constructor:RoomPlayer)
 }
-inline PROTOBUF_NDEBUG_INLINE Player::Impl_::Impl_(
+inline PROTOBUF_NDEBUG_INLINE RoomPlayer::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* arena)
       : name_(arena),
         _cached_size_{0} {}
 
-inline void Player::SharedCtor(::_pb::Arena* arena) {
+inline void RoomPlayer::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   _impl_.pos_ = {};
 }
-Player::~Player() {
-  // @@protoc_insertion_point(destructor:Player)
+RoomPlayer::~RoomPlayer() {
+  // @@protoc_insertion_point(destructor:RoomPlayer)
   _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-inline void Player::SharedDtor() {
+inline void RoomPlayer::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
   _impl_.name_.Destroy();
   _impl_.~Impl_();
 }
 
 const ::google::protobuf::MessageLite::ClassData*
-Player::GetClassData() const {
+RoomPlayer::GetClassData() const {
   PROTOBUF_CONSTINIT static const ::google::protobuf::MessageLite::
       ClassDataFull _data_ = {
           {
               nullptr,  // OnDemandRegisterArenaDtor
-              PROTOBUF_FIELD_OFFSET(Player, _impl_._cached_size_),
+              PROTOBUF_FIELD_OFFSET(RoomPlayer, _impl_._cached_size_),
               false,
           },
-          &Player::MergeImpl,
-          &Player::kDescriptorMethods,
+          &RoomPlayer::MergeImpl,
+          &RoomPlayer::kDescriptorMethods,
       };
   return &_data_;
 }
-PROTOBUF_NOINLINE void Player::Clear() {
-// @@protoc_insertion_point(message_clear_start:Player)
+PROTOBUF_NOINLINE void RoomPlayer::Clear() {
+// @@protoc_insertion_point(message_clear_start:RoomPlayer)
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
@@ -1388,7 +1388,7 @@ PROTOBUF_NOINLINE void Player::Clear() {
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-const char* Player::_InternalParse(
+const char* RoomPlayer::_InternalParse(
     const char* ptr, ::_pbi::ParseContext* ctx) {
   ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
@@ -1396,7 +1396,7 @@ const char* Player::_InternalParse(
 
 
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 19, 2> Player::_table_ = {
+const ::_pbi::TcParseTable<1, 2, 0, 23, 2> RoomPlayer::_table_ = {
   {
     0,  // no _has_bits_
     0, // no _extensions_
@@ -1407,40 +1407,40 @@ const ::_pbi::TcParseTable<1, 2, 0, 19, 2> Player::_table_ = {
     2,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_Player_default_instance_._instance,
+    &_RoomPlayer_default_instance_._instance,
     ::_pbi::TcParser::GenericFallback,  // fallback
     #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-    ::_pbi::TcParser::GetTable<::Player>(),  // to_prefetch
+    ::_pbi::TcParser::GetTable<::RoomPlayer>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     // string name = 2;
     {::_pbi::TcParser::FastUS1,
-     {18, 63, 0, PROTOBUF_FIELD_OFFSET(Player, _impl_.name_)}},
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(RoomPlayer, _impl_.name_)}},
     // int32 pos = 1;
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Player, _impl_.pos_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(Player, _impl_.pos_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RoomPlayer, _impl_.pos_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(RoomPlayer, _impl_.pos_)}},
   }}, {{
     65535, 65535
   }}, {{
     // int32 pos = 1;
-    {PROTOBUF_FIELD_OFFSET(Player, _impl_.pos_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(RoomPlayer, _impl_.pos_), 0, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
     // string name = 2;
-    {PROTOBUF_FIELD_OFFSET(Player, _impl_.name_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(RoomPlayer, _impl_.name_), 0, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
   // no aux_entries
   {{
-    "\6\0\4\0\0\0\0\0"
-    "Player"
+    "\12\0\4\0\0\0\0\0"
+    "RoomPlayer"
     "name"
   }},
 };
 
-::uint8_t* Player::_InternalSerialize(
+::uint8_t* RoomPlayer::_InternalSerialize(
     ::uint8_t* target,
     ::google::protobuf::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Player)
+  // @@protoc_insertion_point(serialize_to_array_start:RoomPlayer)
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
@@ -1455,7 +1455,7 @@ const ::_pbi::TcParseTable<1, 2, 0, 19, 2> Player::_table_ = {
   if (!this->_internal_name().empty()) {
     const std::string& _s = this->_internal_name();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "Player.name");
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "RoomPlayer.name");
     target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
@@ -1464,12 +1464,12 @@ const ::_pbi::TcParseTable<1, 2, 0, 19, 2> Player::_table_ = {
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
             _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Player)
+  // @@protoc_insertion_point(serialize_to_array_end:RoomPlayer)
   return target;
 }
 
-::size_t Player::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Player)
+::size_t RoomPlayer::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:RoomPlayer)
   ::size_t total_size = 0;
 
   ::uint32_t cached_has_bits = 0;
@@ -1492,10 +1492,10 @@ const ::_pbi::TcParseTable<1, 2, 0, 19, 2> Player::_table_ = {
 }
 
 
-void Player::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
-  auto* const _this = static_cast<Player*>(&to_msg);
-  auto& from = static_cast<const Player&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:Player)
+void RoomPlayer::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<RoomPlayer*>(&to_msg);
+  auto& from = static_cast<const RoomPlayer&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:RoomPlayer)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -1509,18 +1509,18 @@ void Player::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void Player::CopyFrom(const Player& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Player)
+void RoomPlayer::CopyFrom(const RoomPlayer& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:RoomPlayer)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Player::IsInitialized() const {
+PROTOBUF_NOINLINE bool RoomPlayer::IsInitialized() const {
   return true;
 }
 
-void Player::InternalSwap(Player* PROTOBUF_RESTRICT other) {
+void RoomPlayer::InternalSwap(RoomPlayer* PROTOBUF_RESTRICT other) {
   using std::swap;
   auto* arena = GetArena();
   ABSL_DCHECK_EQ(arena, other->GetArena());
@@ -1529,7 +1529,7 @@ void Player::InternalSwap(Player* PROTOBUF_RESTRICT other) {
         swap(_impl_.pos_, other->_impl_.pos_);
 }
 
-::google::protobuf::Metadata Player::GetMetadata() const {
+::google::protobuf::Metadata RoomPlayer::GetMetadata() const {
   return ::_pbi::AssignDescriptors(&descriptor_table_register_2eproto_getter,
                                    &descriptor_table_register_2eproto_once,
                                    file_level_metadata_register_2eproto[5]);
@@ -1635,7 +1635,7 @@ const ::_pbi::TcParseTable<1, 2, 1, 0, 2> JoinRoomResp::_table_ = {
     ::_pbi::TcParser::GetTable<::JoinRoomResp>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // repeated .Player others = 2;
+    // repeated .RoomPlayer others = 2;
     {::_pbi::TcParser::FastMtR1,
      {18, 63, 0, PROTOBUF_FIELD_OFFSET(JoinRoomResp, _impl_.others_)}},
     // int32 pos = 1;
@@ -1647,11 +1647,11 @@ const ::_pbi::TcParseTable<1, 2, 1, 0, 2> JoinRoomResp::_table_ = {
     // int32 pos = 1;
     {PROTOBUF_FIELD_OFFSET(JoinRoomResp, _impl_.pos_), 0, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // repeated .Player others = 2;
+    // repeated .RoomPlayer others = 2;
     {PROTOBUF_FIELD_OFFSET(JoinRoomResp, _impl_.others_), 0, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
   }}, {{
-    {::_pbi::TcParser::GetTable<::Player>()},
+    {::_pbi::TcParser::GetTable<::RoomPlayer>()},
   }}, {{
   }},
 };
@@ -1670,7 +1670,7 @@ const ::_pbi::TcParseTable<1, 2, 1, 0, 2> JoinRoomResp::_table_ = {
             stream, this->_internal_pos(), target);
   }
 
-  // repeated .Player others = 2;
+  // repeated .RoomPlayer others = 2;
   for (unsigned i = 0, n = static_cast<unsigned>(
                            this->_internal_others_size());
        i < n; i++) {
@@ -1698,7 +1698,7 @@ const ::_pbi::TcParseTable<1, 2, 1, 0, 2> JoinRoomResp::_table_ = {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .Player others = 2;
+  // repeated .RoomPlayer others = 2;
   total_size += 1UL * this->_internal_others_size();
   for (const auto& msg : this->_internal_others()) {
     total_size += ::google::protobuf::internal::WireFormatLite::MessageSize(msg);

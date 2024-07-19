@@ -4,6 +4,7 @@
 
 #include "RegisterImpl.h"
 #include <grpcpp/grpcpp.h>
+#include "../program.h"
 
 void RegisterImpl::run() {
     {
@@ -14,7 +15,9 @@ void RegisterImpl::run() {
         builder.AddListeningPort(address, ::grpc::InsecureServerCredentials());
         builder.RegisterService(&service);
         std::unique_ptr<::grpc::Server> server(builder.BuildAndStart());
+        std::cout << "register server running..." << std::endl;
         server->Wait();
+        std::cout << "register server stopping..." << std::endl;
     }
 }
 
@@ -38,7 +41,8 @@ RegisterImpl::UserReg(::grpc::ServerContext* context, const ::UserMsg* request, 
 ::grpc::Status
 RegisterImpl::joinRoom(::grpc::ServerContext* context, const ::JoinRoom* request, ::JoinRoomResp* response)
 {
-    auto app = Program::getApp();
+    std::cout << "joinRoom request..." << std::endl;
+    App* app = Program::getApp();
 
     int roomId = request->roomid();
     const std::string& user = request->name();
@@ -51,7 +55,7 @@ RegisterImpl::joinRoom(::grpc::ServerContext* context, const ::JoinRoom* request
     for (auto& o : *others) {
         auto other = response->add_others();
         other->set_pos(o.first);
-        other->set_name(o.second.name());
+        other->set_name(o.second.getName());
     }
     return ::grpc::Status::OK;
 }

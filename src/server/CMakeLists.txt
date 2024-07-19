@@ -50,13 +50,14 @@ else()
 endif()
 
 
-add_subdirectory(service)
-add_subdirectory(app)
+#add_subdirectory(service)
+#add_subdirectory(app)
+#include_directories(app)
 
-file(GLOB_RECURSE ALL_SRCS service/*.cpp service/*.cc app/*.cpp storage/*.cpp game/*.cpp *.cpp)
+file(GLOB_RECURSE ALL_SRCS service/*.cpp service/*.cc app/*.cpp storage/*.cpp game/*.cpp)
 
 add_executable(dzpk main.cpp
-        ${ALL_SRCS})
+        ${ALL_SRCS} program.cpp)
 target_link_libraries(dzpk
         protobuf::libprotobuf
         ${_GRPC_GRPCPP}

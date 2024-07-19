@@ -1,4 +1,4 @@
-# Install script for directory: /home/xingdi/workspace/dzpk/dzpk/src/server/service/protoFile
+# Install script for directory: /home/xingdi/workspace/dzpk/dzpk/dzpk/src/server/service/protoFile
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -9,22 +9,19 @@
 
 class Program
 {
-public:
-    static int main(int argc, char** argv);
-
-
 private:
-    Program() {}
+    Program() = default;
 
     static App* app;
 
 
 public:
-    // getters & setters
     static App* getApp()
     {
         return app;
     }
+
+    static int main(int argc, char** argv);
 
 };
 

@@ -11,7 +11,6 @@
 #include "protoFile/register.grpc.pb.h"
 
 #include <../common/dzpkErrors.h>
-#include "../program.h"
 
 class RegisterImpl final : public Register::Service {
 

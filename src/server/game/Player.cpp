@@ -9,3 +9,15 @@
 #include <ctime>
 
 Player::~Player() = default;
+
+bool Player::getIsOut() {
+    return this->out;
+}
+
+PokerHeap &Player::getHandCard() {
+    return this->handCard;
+}
+
+int Player::getId() {
+    return this->id;
+}

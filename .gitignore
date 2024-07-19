@@ -1,0 +1,5 @@
+third_party
+*cmake-build-debug
+src/server/build
+src/server/cmake-build-debug/*
+.idea

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DCARES_STATICLIB
 
-CXX_INCLUDES = -I/home/xingdi/workspace/dzpk/dzpk/src/server/../../third_party/grpc/include -I/home/xingdi/workspace/dzpk/dzpk/src/server/../common -isystem /home/xingdi/workspace/dzpk/dzpk/third_party/grpc/include -isystem /home/xingdi/workspace/dzpk/gRPC/include
+CXX_INCLUDES = -I/home/xingdi/workspace/dzpk/dzpk/dzpk/src/server/../../third_party/grpc/include -I/home/xingdi/workspace/dzpk/dzpk/dzpk/src/server/../common -isystem /home/xingdi/workspace/dzpk/dzpk/dzpk/third_party/grpc/include -isystem /home/xingdi/workspace/dzpk/gRPC/include
 
 CXX_FLAGS = -std=gnu++17
 

@@ -24,7 +24,7 @@ private:
     int winnerNum; //赢家数量
 
 
-    std::vector<PokerHeap> *finalCard;  // 公共牌加上手牌
+    std::map<int, PokerHeap>* finalCard;  // 公共牌加上手牌
     PokerHeap publicPoker;//公共牌
     PokerHeap pokerCard;  // 牌堆
     std::map<int, Player>* players;  // 玩家
@@ -77,5 +77,10 @@ public:
      * @brief 给公牌发牌
      */
     void licensingPublic(int num);
+
+    /**
+     * @brief 将公牌和玩家手牌结合
+     */
+    void mergePublic();
 };
 #endif //DZPK_ROOM_H

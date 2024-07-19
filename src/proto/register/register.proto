@@ -29,12 +29,12 @@ message JoinRoom {
   string name  = 2; // 用户名称
 }
 
-message Player {
+message RoomPlayer {
   int32 pos = 1;   // 其他玩家的座次, 首次进入房间传-1, 换位置时传入相应位置
   string name = 2; // 名称
 }
 
 message JoinRoomResp {
   int32 pos = 1;              // 玩家的座次
-  repeated Player others = 2; // 所有玩家
+  repeated RoomPlayer others = 2; // 所有玩家
 }
