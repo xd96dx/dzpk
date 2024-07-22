@@ -1,6 +1,0 @@
-/home/xingdi/clion-2022.3.1/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/home/xingdi/gcc12/bin/gcc -DCMAKE_CXX_COMPILER=/home/xingdi/gcc12/bin/g++ -G "CodeBlocks - Unix Makefiles" -S /home/xingdi/workspace/dzpk/dzpk/dzpk/src/server -B /home/xingdi/workspace/dzpk/dzpk/dzpk/src/server/cmake-build-debug
--- Using protobuf 26.1.0
--- Using gRPC 1.64.0
--- Configuring done
--- Generating done
--- Build files have been written to: /home/xingdi/workspace/dzpk/dzpk/dzpk/src/server/cmake-build-debug

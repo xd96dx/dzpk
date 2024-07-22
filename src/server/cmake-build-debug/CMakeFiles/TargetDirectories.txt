@@ -1,3 +1,0 @@
-/home/xingdi/workspace/dzpk/dzpk/dzpk/src/server/cmake-build-debug/CMakeFiles/dzpk.dir
-/home/xingdi/workspace/dzpk/dzpk/dzpk/src/server/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/xingdi/workspace/dzpk/dzpk/dzpk/src/server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
