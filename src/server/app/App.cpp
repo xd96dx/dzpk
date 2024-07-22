@@ -5,5 +5,8 @@
 #include "App.h"
 
 void App::init() {
+    this->allRoom = new Rooms;
+    this->allRoom->insert(std::pair<int, Room*>(1, new Room()));
+
     this->register_service = new RegisterImpl();
 }

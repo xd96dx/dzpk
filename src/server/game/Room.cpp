@@ -10,18 +10,26 @@ void Room::init() {
 
     pokerCard.init();
 
-    for (int i = 0; i < MAX_PLAYER; i++) {
-        players->insert(std::pair<int, Player>(i, Player()));
-    }
+    finalCard = new std::map<int, PokerHeap>;
+    players = new std::map<int, Player>;
+    std::cout << players->size() << std::endl; // debug
 }
 
 int Room::add_player(int pos, int id, std::string name, std::string ip) {
+    if (playerNum == MAX_PLAYER) {
+        std::cout << "room is full" << std::endl;
+        return -1;
+    }
+
     if (pos < 0) { // first time join room
-        int min_pos = 0;
-        for (; min_pos < MAX_PLAYER; min_pos++) {
-            auto player = (*players)[min_pos];
-            if (!player.getName().empty()) {
+        int min_pos = POS_BEGIN;
+        for (; min_pos < POS_END; min_pos++) {
+            auto iter = players->find(min_pos);
+            if (iter == players->end()) {
                 break;
+            } else {
+                // bug here
+                return -1;
             }
         }
         pos = min_pos;
@@ -29,6 +37,8 @@ int Room::add_player(int pos, int id, std::string name, std::string ip) {
 
     players->insert(std::pair<int, Player>(pos, Player(id, name, ip)));
     playerNum++;
+    std::cout << "add user pos: " << pos << " player: " << id << " " << name << " " << ip << std::endl;
+    return pos;
 }
 
 

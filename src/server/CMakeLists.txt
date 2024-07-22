@@ -49,11 +49,7 @@ else()
     set(_GRPC_CPP_PLUGIN_EXECUTABLE $<TARGET_FILE:gRPC::grpc_cpp_plugin>)
 endif()
 
-
-#add_subdirectory(service)
-#add_subdirectory(app)
-#include_directories(app)
-
+# add source file
 file(GLOB_RECURSE ALL_SRCS service/*.cpp service/*.cc app/*.cpp storage/*.cpp game/*.cpp)
 
 add_executable(dzpk main.cpp

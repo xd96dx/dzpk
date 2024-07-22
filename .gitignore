@@ -3,3 +3,5 @@ third_party
 src/server/build
 src/server/cmake-build-debug/*
 .idea
+*.o
+*.d

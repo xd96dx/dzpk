@@ -51,11 +51,12 @@ RegisterImpl::joinRoom(::grpc::ServerContext* context, const ::JoinRoom* request
     int pos = room->add_player(-1, 1, user, context->peer());
     response->set_pos(pos);
 
-    auto others = room->get_player();
-    for (auto& o : *others) {
+    auto all_user = room->get_player();
+    for (auto& u : *all_user) {
         auto other = response->add_others();
-        other->set_pos(o.first);
-        other->set_name(o.second.getName());
+        other->set_pos(u.first);
+        other->set_name(u.second.getName());
+        std::cout << "set user: " << u.first << " " << u.second.getName() << std::endl;
     }
     return ::grpc::Status::OK;
 }

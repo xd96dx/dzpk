@@ -31,10 +31,12 @@ public:
     void init();
 
     Room* getRoom(int roomId) {
-        auto it = allRoom->find(roomId);
-        if (it == allRoom->end())
-            return nullptr;
-        return it->second;
+        // TODO
+//        auto it = allRoom->find(roomId);
+//        if (it == allRoom->end())
+//            return nullptr;
+//        return it->second;
+        return allRoom->at(1);
     }
 };
 

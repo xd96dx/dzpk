@@ -11,7 +11,9 @@
 #include <unordered_map>
 #include <map>
 
-const int MAX_PLAYER = 16;
+const int MAX_PLAYER = 8;
+const int POS_BEGIN = 1;
+const int POS_END = 9; // pos [1, 9)
 
 class Room;
 
@@ -24,16 +26,17 @@ private:
     int winnerNum; //赢家数量
 
 
-    std::map<int, PokerHeap>* finalCard;  // 公共牌加上手牌
     PokerHeap publicPoker;//公共牌
     PokerHeap pokerCard;  // 牌堆
-    std::map<int, Player>* players;  // 玩家
+    std::map<int, PokerHeap>* finalCard;  // 公共牌加上手牌
+    std::map<int, Player>* players;  // 座位号: 玩家
 
 public:
     Room() : roomId(1), playerNum(0), winnerNum(0)
     {
         // TODO
 //        roomId = ::rand();
+        this->init();
     }
 
     ~Room() = default;
