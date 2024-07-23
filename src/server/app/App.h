@@ -36,7 +36,7 @@ public:
 //        if (it == allRoom->end())
 //            return nullptr;
 //        return it->second;
-        return allRoom->at(1);
+        return (*allRoom)[1];
     }
 };
 

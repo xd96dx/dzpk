@@ -26,10 +26,11 @@ int Room::add_player(int pos, int id, std::string name, std::string ip) {
         for (; min_pos < POS_END; min_pos++) {
             auto iter = players->find(min_pos);
             if (iter == players->end()) {
+                // not find pos
                 break;
             } else {
-                // bug here
-                return -1;
+                // find pos
+                continue;
             }
         }
         pos = min_pos;
